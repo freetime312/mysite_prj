@@ -1,0 +1,921 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/desktop.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/setting.js"></script>
+</head>
+<body>
+<img class="bg" src="images/bg_1440_900.png" />
+
+<div id='header'>
+</div>
+
+<div id='footer'>
+</div>
+
+<div id='body_content'>
+    <div id='setting_div' class='app_win'>
+        <div id='setting_tabs' class='app_win_body'>
+            <ul>
+                <li><a href="#tabs-reg-setting">注册设置</a></li>
+                <li><a href="#tabs-codex-setting">编解码设置</a></li>
+                <li><a href="#tabs-capture-setting">字幕设置</a></li>
+                <li><a href="#tabs-network-setting">网络设置</a></li>
+                <li><a href="#tabs-record-setting">录像设置</a></li>
+                <li><a href="#tabs-usermng">用户管理</a></li>
+                <li><a href="#tabs-update-setting">应用更新</a></li>
+            </ul>
+            <div id='tabs-usermng' >
+                <br/>
+                <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table'>
+    <!--
+                    <tr>
+                         <td class='input_th' width='40%'>
+                             原用户名:
+                         </td>
+                         <td>
+                             <input type='text' id='user_name'>
+                         </td>                     
+                    </tr>
+    -->
+                    <input type='hidden' id='user_name' value='admin'>
+
+                    <tr>
+                         <td class='input_th'>
+                             原密码:
+                         </td>
+                         <td>
+                             <input type='password' id='orig_password'>
+                         </td>                     
+                    </tr>
+                    <tr>
+                         <td class='input_th'>
+                             新密码:
+                         </td>
+                         <td>
+                             <input type='password' id='new_password'>
+                         </td>                     
+                    </tr>  
+                    <tr>
+                         <td class='input_th'>
+                             确认新密码:
+                         </td>
+                         <td>
+                             <input type='password' id='new_password_again'>
+                         </td>                     
+                    </tr>                  
+                </table>
+                <div style='text-align:center;padding-top:20px;'><input type='button' value='提交' class='input_button' id='user_setting_submit' ></div>
+            </div>
+            <div id='tabs-network-setting' >
+                <br/>
+                <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table'>
+                    <tr>
+                         <td class='input_th' width='40%'>
+                             <span id='3_name'>数据网口IP地址:</span>
+                         </td>
+                         <td>
+                             <input type='text' id='3'>
+                             <input type='hidden' id='3_hidden'>
+                         </td>                     
+                    </tr>
+                    <tr>
+                         <td class='input_th'>
+                             <span id='4_name'>数据网口子网掩码:</span>
+                         </td>
+                         <td>
+                             <input type='text' id='4'>
+                             <input type='hidden' id='4_hidden'>
+                         </td>                     
+                    </tr>  
+                    <tr>
+                         <td class='input_th'>
+                             <span id='5_name'>数据网口默认网关:</span>
+                         </td>
+                         <td>
+                             <input type='text' id='5'>
+                             <input type='hidden' id='5_hidden'>
+                         </td>                     
+                    </tr>                  
+                    <tr>
+                         <td class='input_th'>
+                             <span id='6_name'>数据网口MAC地址:</span>
+                         </td>
+                         <td>
+                             <input type='text' id='6' disabled='disabled'>
+                         </td>                     
+                    </tr>
+                </table>
+                <div style='text-align:center;padding-top:20px;'><input type='button' value='提交' class='input_button' id='net_setting_submit'></div>        
+            </div>
+            <div id='tabs-reg-setting' >
+                <br/>
+                <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table'>
+                    <tr>
+                         <td class='input_th' width='20%'>
+                             <span id='51_name'>设备号码:</span>
+                         </td>
+                         <td width='30%'>
+                             <input type='text' id='51'>
+                             <strong style='color:red;'>*</strong>
+                             <input type='hidden' id='51_hidden'>
+                         </td>
+                         <td class='input_th' width='20%'>
+                             <span id='53_name'>注册服务器IP地址:</span>
+                         </td>
+                         <td width='30%'>
+                             <input type='text' id='53'>
+                             <strong style='color:red;'>*</strong>
+                             <input type='hidden' id='53_hidden'>
+                         </td>                             
+                    </tr>
+                    <tr>
+                         <td class='input_th'>
+                             <span id='52_name'>认证密码:</span>
+                         </td>
+                         <td>
+                             <input type='password' id='52'>
+                             <strong style='color:red;'>*</strong>
+                             <input type='hidden' id='52_hidden'>
+                         </td>
+                         <td class='input_th'>
+                             <span id='58_name'>注册服务器端口:</span>
+                         </td>
+                         <td>
+                             <input type='text' id='58'>
+                             <normal style='color:red;'>*(不建议修改)</normal>
+                             <input type='hidden' id='58_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th'>
+                             <span id='54_name'>注册过期时间:</span>
+                         </td>
+                         <td>
+                             <input type='text' id='54'>秒
+                             <strong style='color:red;'>*</strong>
+                             <input type='hidden' id='54_hidden'>
+                         </td>
+                         <td class='input_th'>
+                             <span id='59_name'>本地SIP 端口:</span>
+                         </td>
+                         <td>
+                             <input type='text' id='59'>
+                             <normal style='color:red;'>*(不建议修改)</normal>
+                             <input type='hidden' id='59_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th'>
+                             传输层协议类型:
+                         </td>
+                         <td>
+                             <input type='text' id='-5' value='UDP' disabled='disabled'>
+                         </td>
+                         <td class='input_th'>
+                             注册状态:
+                         </td>
+                         <td>
+                             <input type='text' id='dev_reg_status' value='' disabled='disabled'>
+                         </td>
+                    </tr>
+                    <!--tr>
+                         <td class='input_th'>
+                             <span id='57_name'>域名:</span>
+                         </td>
+                         <td>
+                             <input type='text' id='57'>
+                             <input type='hidden' id='57_hidden'>
+                         </td>
+                         <td class='input_th'>
+                             <span id='60_name'>本地SIP IP:</span>
+                         </td>
+                         <td>
+                             <input type='text' id='60' disabled='disabled'>
+                         </td>
+                    </tr-->
+                </table>
+                <div style='text-align:center;padding-top:20px;'>
+                <input type='button' value='提交' class='input_button' id='reg_setting_submit'>
+                </div>
+            </div>
+    <!-- 老版本的编解码设置
+            <div id='tabs-codex-setting' >
+                <br/>
+                <div class='input_table_title'>音频设置</div>
+                <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table'>
+                    <tr>
+                         <td class='input_th2'>
+                             编码控制:
+                         </td>
+                         <td class='input_col'>
+                             <input type='radio' name='audio_encode_ctrl' id='audio_encode_ctrl_enable' checked>开启
+                             <input type='radio' name='audio_encode_ctrl' id='audio_encode_ctrl_disable'>关闭
+                         </td>
+                         <td class='input_th2'>
+                             解码控制:
+                         </td>
+                         <td class='input_col'>
+                             <input type='radio' name='audio_decode_ctrl' id='audio_decode_ctrl_enable' checked>开启
+                             <input type='radio' name='audio_decode_ctrl' id='audio_decode_ctrl_disable'>关闭
+                         </td>                     
+                         <td class='input_th2'>
+                             音频输入:
+                         </td>
+                         <td class='input_col'>
+                             MIC
+                         </td>
+                         <td class='input_th2'>
+                             音频输出:
+                         </td>
+                         <td class='input_col'>
+                            喇叭
+                         </td>                      
+                    </tr>
+                    <tr>
+                         <td class='input_th2'>
+                             <span id='34_name'>编码类型:</span>
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='34'>
+                                 <option value='0'>G711a</option>
+                                 <option value='1'>G711u</option>
+                                 <option value='2'>G729a</option>
+                             </select>
+                             <input type='hidden' id='34_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             有效载荷:
+                         </td>
+                         <td class='input_col' >
+                             <span id="valid_load">8</span>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='56_name'>RTP 端口:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='56' style='width:100px;'/>
+                             <input type='hidden' id='56_hidden'>
+                         </td>
+                         <td class='input_th2'>                     </td>
+                         <td class='input_col'>                     </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th2'>
+                             <span id='36_name'>采样频率:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='36' style='width:60px;' disabled='disabled'/>
+                             <strong style='color:gray;'>kHZ</strong>
+                         </td>
+                         <td class='input_th2'>
+                         </td>
+                         <td class='input_col'>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='33_name'>音量:&nbsp;</span>
+                         </td>
+                         <td class='input_col' colspan='2'>
+                             <div id='audio_volume'></div>
+                         </td>
+                         <td class='input_col'>
+                             &nbsp;&nbsp;<span id='33'>10</span>
+                             <input type='hidden' id='33_hidden'>
+                         </td>
+                    </tr>                 
+                    <tr>
+                         <td class='input_th2'>
+                             音频优化:
+                         </td>
+                         <td class='input_col'>
+                             <input type='radio' name='audio_optm_ctrl' id='audio_optm_ctrl_enable' >开启
+                             <input type='radio' name='audio_optm_ctrl' id='audio_optm_ctrl_disable'>关闭
+                             <input type='hidden' id='66_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             音频步长:
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='67'>
+                                 <option value='0'>0</option>
+                                 <option value='5'>5</option>
+                                 <option value='9'>9</option>
+                             </select>
+                             <input type='hidden' id='67_hidden'>
+                         </td>
+
+                    </tr>
+
+                </table>
+                <br/><br/><br/>
+                <div class='input_table_title'>视频设置</div>
+                <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table'>
+                    <tr>
+                         <td class='input_th2'>
+                             编码控制:
+                         </td>
+                         <td class='input_col'>
+                             <input type='radio' name='vedio_encode_ctrl' id='vedio_encode_ctrl_enable' checked>开启
+                             <input type='radio' name='vedio_encode_ctrl' id='vedio_encode_ctrl_disable'>关闭
+                         </td>
+                         <td class='input_th2'>
+                             解码控制:
+                         </td>
+                         <td class='input_col'>
+                             <input type='radio' name='vedio_decode_ctrl' id='vedio_decode_ctrl_enable' checked>开启
+                             <input type='radio' name='vedio_decode_ctrl' id='vedio_decode_ctrl_disable'>关闭
+                         </td>                     
+                         <td class='input_th2'>
+                             <span id='16_name'>视频输入:</span>
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='16'>
+                                 <option value='0' pid='0'>CVBS</option>
+                                 <option value='1' pid='1'>HD-SDI</option>
+                                 <option value='2' pid='1'>DVI-I</option>
+                             </select>
+                             <input type='hidden' id='16_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='62_name'>视频输出:</span>
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='62'>
+                                 <option value='0' pid='0'>CVBS</option>
+                                 <option value='1' pid='1'>DVI-I</option>
+                             </select>
+                             <input type='hidden' id='62_hidden'>
+                         </td>                      
+                    </tr>
+                    <tr>
+                         <td class='input_th2'>
+                             编解码类型:
+                         </td>
+                         <td class='input_col' >
+                             <span id="enc_dec_type">HPVC</span>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='27_name'>分辨率:</span>
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='27'>
+                                 <option value='0' pid='0'>QCIF</option>
+                                 <option value='1' pid='0'>CIF</option>
+                                 <option value='2' pid='0'>4CIF</option>
+                                 <option value='3' pid='0'>D1</option>                             
+                                 <option value='6' pid='1'>720P</option>                             
+                                 <option value='7' pid='1'>1080P</option>                             
+                             </select>
+                             <input type='hidden' id='27_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='20_name'>帧率:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='20' style='width:80px;'/>fps
+                             <input type='hidden' id='20_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='18_name'>编码码率:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='18' style='width:60px;'/>kbps
+                             <input type='hidden' id='18_hidden'>
+                         </td>                     
+                    </tr>
+                    <tr>
+                         <td class='input_th2'>
+                             接收控制:
+                         </td>
+                         <td class='input_col'>
+                             <input type='radio' name='vedio_recv_ctrl' id='vedio_recv_ctrl_enable' checked>开启
+                             <input type='radio' name='vedio_recv_ctrl' id='vedio_recv_ctrl_disable'>关闭
+                         </td>
+                    </tr>                 
+                    <tr>
+                         <td class='input_th2'>
+                             <span id='63_name'>RSM:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='63' style='width:80px;'/>
+                             <input type='hidden' id='63_hidden'>
+                         </td>
+
+                         <td class='input_th2'>
+                             <span id='64_name'>RSN:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='64' style='width:80px;'/>
+                             <input type='hidden' id='64_hidden'>
+                         </td>
+
+                         <td class='input_th2'>
+                             <span id='65_name'>GOP长度:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='65' style='width:80px;'/>
+                             <input type='hidden' id='65_hidden'>
+                         </td>
+
+                    </tr>
+
+
+                </table>            
+                <div style='text-align:center;padding-top:20px;'><input type='button' value='提交' class='input_button' id='codex_setting_submit'></div>
+            </div>
+    -->
+            <div id='tabs-codex-setting' >
+                <br/>
+                <div class='input_table_title'>接口设置</div>
+                <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table' style='table-layout: fixed;'>
+                    <colgroup span=2 width=33></colgroup>
+                    <colgroup span=2 width=33></colgroup>
+                    <colgroup span=2 width=34></colgroup>
+                    <tr>
+                         <td class='input_th2'>
+                             音频输入:
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='8'>
+                                 <option value='0' pid='0'>MIC方式</option>
+                                 <option value='1' pid='1'>LINE方式</option>
+                             </select>
+                             <input type='hidden' id='8_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             视频输入:
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='16'>
+                                 <option value='0' pid='0'>CVBS</option>
+                                 <option value='1' pid='1'>HD-SDI</option>
+                                 <option value='2' pid='1'>DVI-I</option>
+                             </select>
+                             <input type='hidden' id='16_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th2'>
+                             音频输出:
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='79'>
+                                 <option value='0' pid='0'>喇叭方式</option>
+                                 <option value='1' pid='1'>线路输出</option>
+                             </select>
+                             <input type='hidden' id='79_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             视频输出:
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='62'>
+                                 <option value='0' pid='0'>CVBS</option>
+                                 <option value='1' pid='1'>DVI-I</option>
+                             </select>
+                             <input type='hidden' id='62_hidden'>
+                         </td>
+                    </tr>
+                </table>
+                <br/>
+                <div class='input_table_title'>编解码设置</div>
+                <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table' style='table-layout: fixed;'>
+                    <colgroup span=2 width=33></colgroup>
+                    <colgroup span=2 width=33></colgroup>
+                    <colgroup span=2 width=34></colgroup>
+                    <tr>
+                         <td class='input_th2'>
+                             <span id='27_name'>编码分辨率:</span>
+                         </td>
+                         <td class='input_col' >
+                             <select class='input_select' id='27'>
+                                 <option value='0' pid='0'>QCIF</option>
+                                 <option value='1' pid='0'>CIF</option>
+                                 <option value='2' pid='0'>4CIF</option>
+                                 <option value='3' pid='0'>D1</option>
+                                 <option value='6' pid='1'>720P</option>
+                                 <option value='7' pid='1'>1080P</option>
+                             </select>
+                             <input type='hidden' id='27_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='81_name'>解码分辨率:</span>
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='81'>
+                                 <option value='0' pid='0'>QCIF</option>
+                                 <option value='1' pid='0'>CIF</option>
+                                 <option value='2' pid='0'>4CIF</option>
+                                 <option value='3' pid='0'>D1</option>
+                                 <option value='4' pid='1'>720P</option>
+                                 <option value='5' pid='1'>1080P</option>
+                             </select>
+                             <input type='hidden' id='81_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             音频格式:
+                         </td>
+                         <td class='input_col' >
+                             <select class='input_select' id='audio_format' onchange='handleAudioFormat()'>
+                                 <option value='0' pid='0'>G711优先</option>
+                                 <option value='1' pid='1'>G729优先</option>
+                             </select>
+                             <input type='hidden' id='audio_format_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th2'>
+                             <span id='20_name'>编码帧率:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='20' style='width:80px;'/>fps
+                             <input type='hidden' id='20_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='82_name'>解码帧率:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='82' style='width:80px;' />fps
+                             <input type='hidden' id='82_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='34_name'>音频制式:</span>
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='34' onchange='handleAudioChange()'>
+                                 <option value='0' pid='0'>a-law</option>
+                                 <option value='1' pid='0'>u-law</option>
+                                 <option value='2' pid='1'>729a</option>
+                             </select>
+                             <input type='hidden' id='34_hidden'>
+                             <input type='hidden' id='34_pid0'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th2'>
+                             <span id='18_name'>编码码率:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='18' style='width:80px;'/>kbps
+                             <input type='hidden' id='18_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='83_name'>解码码率:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='83' style='width:80px;' />kbps
+                             <input type='hidden' id='83_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                </table>
+                <br/>
+                <div class='input_table_title'>高级设置</div>
+                <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table' style='table-layout: fixed;'>
+                    <colgroup span=2 width=33></colgroup>
+                    <colgroup span=2 width=33></colgroup>
+                    <colgroup span=2 width=34></colgroup>
+                    <tr>
+                         <td class='input_th2'>
+                             音频初始步长:
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='67'>
+                                 <option value='0'>0</option>
+                                 <option value='5'>5</option>
+                                 <option value='9'>9</option>
+                             </select>
+                             <input type='hidden' id='67_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='56_name'>音频RTP收发端口:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='56' style='width:80px;'/>
+                             <input type='hidden' id='56_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             视频调整:
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='84'>
+                                 <option value='1'>流畅优先</option>
+                                 <option value='2'>质量优先</option>
+                             </select>
+                             <input type='hidden' id='84_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th2'>
+                             <span id='63_name'>RSM:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='63' style='width:80px;'/>
+                             <input type='hidden' id='63_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             <span id='80_name'>视频RTP收发端口:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='80' style='width:80px;'/>
+                             <input type='hidden' id='80_hidden'>
+                         </td>
+                         <td class='input_th2'>
+                             接听方式:
+                         </td>
+                         <td class='input_col'>
+                             <select class='input_select' id='85'>
+                                 <option value='0'>手动接听</option>
+                                 <option value='1'>自动接听</option>
+                             </select>
+                             <input type='hidden' id='85_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th2'>
+                             <span id='64_name'>RSN:</span>
+                         </td>
+                         <td class='input_col'>
+                             <input type='text' id='64' style='width:80px;'/>
+                             <input type='hidden' id='64_hidden'>
+                         </td>
+                    </tr>
+                </table>
+                <div style='text-align:center;padding-top:20px;'><input type='button' value='提交' class='input_button' id='codex_setting_submit'></div>
+            </div>
+
+            <div id='tabs-update-setting'>
+                <br/>
+                <form enctype="multipart/form-data" name="form1" method="POST" onsubmit="return false;" target="fra" action="/goform/upgradeFirm">
+                <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table'>
+                    <tr>
+                         <td class='input_th' width='40%'>
+                            当前软件版本:
+                         </td>
+                         <td class='input_col'>
+                            1.0.0 
+                         </td>                     
+                    </tr>
+                    <tr>
+                         <td class='input_th' width='40%'>
+                            选择升级文件:
+                         </td>
+                         <td class='input_col'>
+                                <input type='file' id="presetFile" name="presetFile">
+                             </td>
+                        </tr>
+
+                        <tr id='upgrade_submit_row'>
+                            <td class='input_th' width='40%'>
+                            </td>                    
+                            <td>
+                                <input type="button" value="升级" class='input_button' onclick="submitFileChk('zip', 1)">
+                            </td>
+                        </tr>
+                        
+                        <tr id='upgrade_progress_row'>
+                            <td class='input_th' width='40%'>
+                            </td>                
+                            <td colspan='2'>
+                                <div id="upgrade_progressbar"></div>
+                                <br/>
+                                <span id='upgrade_status'>升级中...</span>
+                                </br>
+                                </br>
+                                <span id='upgrade_tips'>注意:<span style='color:blue'>升级过程中不能关闭设备电源</span></span>
+                                <br/> <br/>
+                                <div id='upgrade_done_bt' style='display:none;'>
+                                    <input type="button" value="确定" class='input_button'>&nbsp;
+                                    <input type="button" value="取消" class='input_button' onclick="cancelUpgrade()">
+                                </div>    
+                            </td>
+                        </tr>
+                                            
+                    </table>
+                    <iframe name="fra" width=0 height=0  frameborder=0></iframe>
+                </form>
+            </div> 
+
+    <!-- Add Part -->
+            <div id='tabs-capture-setting' >
+                <br/>
+                <fieldset>
+                    <legend>编码字幕</legend>
+                    <table cellpadding='0' cellspacing='0' width='100%' height='100%'>
+                    <tr>
+                         <td class='input_th' width='20%'>
+                             <span id='61_name'>文本：</span>
+                         </td>
+                         <td width='30%'>
+                             <input type='text' id='61'>
+                             <input type='hidden' id='61_hidden'>
+                         </td>
+                         <td class='input_th' width='20%'>
+                             <span id='70_name'>颜色:</span>
+                         </td>
+                         <td width='30%'>
+                             <select style='width:200px' id='70'>
+                                 <option value='0'>黑色</option>
+                                 <option value='1'>蓝色</option>
+                                 <option value='2'>绿色</option>
+                                 <option value='3'>青色</option>
+                                 <option value='4'>红色</option>
+                                 <option value='5'>深红</option>
+                                 <option value='6'>黄色</option>
+                                 <option value='7'>白色</option>
+                             </select>
+                             <input type='hidden' id='70_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th' width='20%'>
+                             <span id='72_name'>X坐标：</span>
+                         </td>
+                         <td width='30%'>
+                             <input type='text' id='72'>
+                             <input type='hidden' id='72_hidden'>
+                         </td>
+                         <td class='input_th' width='20%'>
+                             <span id='71_name'>字号:</span>
+                         </td>
+                         <td width='30%'>
+                             <select style='width:200px' id=71>
+                                 <option value='0'>大</option>
+                                 <option value='1'>中</option>
+                                 <option value='2'>小</option>
+                             </select>
+                             <input type='hidden' id='71_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th' width='20%'>
+                             <span id='73_name'>Y坐标：</span>
+                         </td>
+                         <td width='30%'>
+                             <input type='text' id='73'>
+                             <input type='hidden' id='73_hidden'>
+                         </td>
+                         <!--
+                         <td class='input_th' width='20%'>
+                             <span id='c253_name'>轮廓颜色:</span>
+                         </td>
+                         <td width='30%'>
+                             <input type='text' id='c253'>
+                             <input type='hidden' id='c253_hidden'>
+                         </td>                             
+                         -->
+                    </tr>
+
+                    </table>
+                </fieldset>
+                <br/>
+                <fieldset>
+                    <legend>解码字幕</legend>
+                    <input type='hidden' id='78'>
+                    <table cellpadding='0' cellspacing='0' width='100%' height='100%'>
+                    <tr>
+                         <td class='input_th' width='20%'> <span id='78_num'>显示号码：</span> </td>
+                         <td width='30%'>
+                             <select style='width:200px' id='78_0'>
+                                 <option value='0'>否</option>
+                                 <option value='1'>是</option>
+                             </select>
+                         </td>
+                         <td class='input_th' width='20%'> <span id='74_name'>颜色：</span> </td>
+                         <td width='30%'>
+                             <select style='width:200px' id='74'>
+                                 <option value='0'>黑色</option>
+                                 <option value='1'>蓝色</option>
+                                 <option value='2'>绿色</option>
+                                 <option value='3'>青色</option>
+                                 <option value='4'>红色</option>
+                                 <option value='5'>深红</option>
+                                 <option value='6'>黄色</option>
+                                 <option value='7'>白色</option>
+                             </select>
+                             <input type='hidden' id='74_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th' width='20%'> <span id='78_frame'>显示帧率：</span> </td>
+                         <td width='30%'>
+                             <select style='width:200px' id='78_1'>
+                                 <option value='0'>否</option>
+                                 <option value='1'>是</option>
+                             </select>
+                         </td>
+                         <!--
+                         <td class='input_th' width='20%'> <span id=''>轮廓颜色：</span> </td>
+                         <td width='30%'> <input type='text' id=''><input type='hidden' id=''> </td>
+                         -->
+                         <td class='input_th' width='20%'> <span id='75_name'>字号：</span> </td>
+                         <td width='30%'>
+                             <select style='width:200px' id='75'>
+                                 <option value='0'>大</option>
+                                 <option value='1'>中</option>
+                                 <option value='2'>小</option>
+                             </select>
+                             <input type='hidden' id='75_hidden'>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td class='input_th' width='20%'> <span id='78_code'>显示码率：</span> </td>
+                         <td width='30%'>
+                             <select style='width:200px' id='78_2'>
+                                 <option value='0'>否</option>
+                                 <option value='1'>是</option>
+                             </select>
+                         </td>
+                         <td class='input_th' width='20%'> <span id='76_name'>X坐标：</span> </td>
+                         <td width='30%'> <input type='text' id='76'><input type='hidden' id='76_hidden'> </td>                             
+                    </tr>
+                    <tr>
+                         <td class='input_th' width='20%'> <span id='78_res'>显示分辨率：</span> </td>
+                         <td width='30%'>
+                             <select style='width:200px' id='78_3'>
+                                 <option value='0'>否</option>
+                                 <option value='1'>是</option>
+                             </select>
+                         </td>
+                         <td class='input_th' width='20%'> <span id='77_name'>Y坐标：</span> </td>
+                         <td width='30%'> <input type='text' id='77'><input type='hidden' id='77_hidden'> </td>                             
+                    </tr>
+                    <tr>
+                         <td class='input_th' width='20%'> <span id='78_pack'>显示丢包率：</span> </td>
+                         <td width='30%'>
+                             <select style='width:200px' id='78_4'>
+                                 <option value='0'>否</option>
+                                 <option value='1'>是</option>
+                             </select>
+                         </td>
+                    </tr>
+                    </table>
+                </fieldset>
+
+                <br/>
+                <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table'>
+                </table>
+                <div style='text-align:center;padding-top:20px;'><input type='button' value='提交' class='input_button' id='capture_setting_submit'></div>
+            </div>
+            <div id='tabs-record-setting'>
+                <table>
+                    <tr>
+                        <td style="width:70px">&nbsp;
+                        </td>
+                        <td style="width:80px">录像开关: 
+                        </td>
+                        <td>
+                        <img id="cfgRecorder" src="images/recorder_off.png" onmouseover="this.style.cursor='pointer';this.style.cursor='hand'" />
+                        <input type='hidden' id='recorderPic' value=0 />
+                        <input type='hidden' id='recorderSt' value="    Record..." />
+                        </td>
+                    </tr>
+                </table>
+                <table id='record-table' cellpadding='0' cellspacing='0' width='100%' class="display data_tables" style='font-size:1em;font-family:arial;'>
+                    <thead>
+                        <tr>
+                            <th><input type='checkbox' class='sel_all' name='record_sel' /></th>
+                            <th>序号</th>
+                            <th>文件名</th>
+                            <th>文件大小</th>
+                            <th>
+                                <img src='images/delete.png' onclick='delMultiRecord()'/>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th><input type='checkbox' class='sel_all' name='record_sel' /></th>
+                            <th>序号</th>
+                            <th>文件名</th>
+                            <th>文件大小</th>
+                            <th>
+                                <img src='images/delete.png' onclick='delMultiRecord()'/>
+                            </th>
+                        </tr>
+                    </tfoot>
+                    <tbody id='record_tbody'> 
+                    </tbody> 
+                </table>
+            </div>
+        </div>    
+    </div>
+</div>
+
+<div id="diag_div" style='display:none;'>
+<span id='diag_content'></span>
+</div>
+
+</body>
+
+
+</html>

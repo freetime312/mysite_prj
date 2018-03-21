@@ -1,0 +1,513 @@
+/* VR style sheet. */
+
+* {
+  font-size:		inherit;
+  font-family:		inherit;
+  color:		inherit;
+}
+
+img {
+  border-width:		0px;
+}
+
+body {
+  background-color:	#eeeeee;
+  border-color:		#eeeeee;
+  margin:		6px;
+  padding:		8px;
+  font-family:		Arial;
+  font-size:		100.01%
+}
+
+A {
+  text-decoration:	none;
+  color:		#330099;
+}
+
+A:hover {
+  color:		#990000;
+}
+
+A:active {
+  text-decoration:	underline;
+}
+
+A.minor {
+  font-weight:		normal;
+  color:                #220088;
+}
+
+table.null {
+  background-color:	#ffffff;
+}
+
+td.null {
+  border-style:		none;
+}
+
+/* The title */
+
+table.title {
+  width:		100%;
+}
+
+td.logo {
+  border-width:		0;
+  padding-top:		4px;
+  padding-bottom:	4px;
+  padding-left:		4px;
+  vertical-align:	top;
+  color:		#000000;
+  font-weight:		bolder;
+}
+
+td.product {
+  border-width:		0px;
+  padding:		0pt;
+  padding-left:		4px;
+  vertical-align:	top;
+  text-align:		left;
+  color:		#000000;
+  font-family:		Arial;
+  font-weight:		bolder;
+  font-style:		italic;
+  font-size:		10pt;
+}
+
+
+td.tagname {
+  border-width:		0px;
+  padding:		0px;
+  padding-left:		4px;
+  vertical-align:	top;
+  text-align:		left;
+  color:		#000000;
+  font-family:		Arial;
+  font-weight:		bolder;
+  font-size:		10pt;
+}
+
+
+/* Navigation banner */
+
+table.banner {
+  width:		100%;
+  border-width:		0px;
+  padding:		0px;
+  padding-bottom:	10px;
+}
+
+/* Current name box */
+
+td.name {
+  /* background-image:	url(/images/bar2-2.jpg);*/
+  /*background-color:	#ffffff;*/
+  border-style:		none;
+  /*border-color:		#808080;*/
+  border-width:		0px;
+  padding:		2pt;
+  font-weight:		bolder;
+  font-size:		larger;
+}
+
+/* Current path box. */
+
+td.bannerHdr {
+  width:		10%;
+  background-color:	#ffd0c0;
+  border-color:		#bbbbbb;
+  border-width:		0px;
+  border-style:		solid;
+  padding:		0px;
+  padding-left:		4px;
+  padding-right:	4px;
+  font-family:		Arial;
+  font-size:		smaller;
+}
+
+td.path {
+  background-color:	#ffd0c0;
+  border-color:		#bbbbbb;
+  border-width:		0px;
+  border-style:		solid;
+  padding:		0px;
+  padding-left:		4px;
+  font-size:		smaller;
+  font-family:		Arial;
+}
+
+td.pathlink {
+  width:		5%;
+  background-color:	#ffd0c0;
+  border-color:		#bbbbbb;
+  border-width:		0px;
+  border-style:		solid;
+  padding:		0px;
+  padding-right:	4px;
+  padding-left:		4px;
+  text-align:		center;
+  font-size:		smaller;
+  font-family:		Arial;
+}
+
+/* Current choices box. */
+
+td.selection {
+  background-color:	#ffe0d0;
+  border-color:		#bbbbbb;
+  border-width:		0px;
+  border-style:		solid;
+  text-align:		left;
+  padding:		0px;
+  padding-left:		4px;
+  padding-right:	20px;
+  font-size:		smaller;
+  font-family:		Arial;
+}
+
+/* Up link. */
+
+td.upLink {
+  background-color:	#ffe0d0;
+  border-color:		#bbbbbb;
+  border-width:		0px;
+  border-style:		solid;
+  text-align:		center;
+  padding:		0px;
+  font-size:		smaller;
+  font-family:		Arial;
+}
+
+/* Help for the current web page. */
+
+span.pageHelp {
+  text-align:		left;
+  font-size:		smaller;
+  color:		#007700;;
+  font-family:		Arial;
+}
+
+/* Blank page */
+
+td.blankPage {
+  vertical-align:	top;
+  text-align:		center;
+  color:		#000000;
+  font-family:		Arial;
+  font-weight:		bolder;
+  font-size:		larger;
+}
+
+/* Home page title */
+
+td.homeTitle {
+  vertical-align:	top;
+  text-align:		center;
+  color:		#000000;
+  font-family:		Arial;
+  font-weight:		bolder;
+  font-size:		150%;
+}
+
+/* Company logo */
+
+td.companyLogo {
+  border-width:		0px;
+  border-color:		#bbbbbb;
+  padding:		0px;
+  vertical-align:	top;
+  text-align:		left;
+  color:		#000000;
+  font-family:		Arial;
+  font-weight:		bolder;
+  font-size:		larger;
+}
+
+/* Server logo */
+
+td.serverLogo {
+  border-width:		0px;
+  padding:		0px;
+  vertical-align:	bottom;
+  text-align:		right;
+  color:		#000000;
+  font-family:		Arial;
+  font-weight:		bolder;
+  font-size:		larger;
+}
+
+/* The parameters. */
+
+table.param {
+
+  font-size:		90%;
+}
+
+td.label {
+
+  border-width:		0px;
+}
+
+td.minor {
+  font-weight:		bolder;
+  color:		#330099;
+  width:		50%;
+  border-width:		0px;
+}  
+
+td.value {
+
+  border-width:		0px;
+  font-family:		Arial;
+}
+
+td.help {
+  vertical-align:	top;
+  font-style:		italic;
+  padding-left:		20pt;
+  border-width:		0px;
+}
+
+/* The form apply button. */
+
+table.apply {
+  width:		100%;
+}
+
+td.applyrule {
+  width:		90%;
+}
+
+td.apply {
+}
+
+input {
+/*  font-family:		Arial;*/
+  font-family:		Monaco, Courier;
+  font-size:		100.01%;
+}
+
+selection {
+  font-family:		Arial;
+}
+
+input.apply {
+  padding:	        0;
+  font-size:		x-small;
+}
+
+button.apply {
+  padding:	        0;
+  font-size:		x-small;
+}
+
+input.new {
+  padding:	        0;
+  font-size:		x-small;
+}
+
+input.cancel {
+  padding:	        0;
+  font-size:		x-small;
+}
+
+input.refresh {
+  padding:	        0;
+  font-size:		x-small;
+}
+
+span.rdonly {
+  background-color:     #eeeeee;
+  padding-left:		4px;
+}
+
+input.rw-text, input.rw-number {
+  padding-left:		4px;
+  padding-right:	1ex;
+}
+
+input.rw-text {
+  text-align:		left;
+}
+
+input.rw-number {
+  text-align:		right;
+}
+
+input.read-only {
+/*
+  text-align:		center;
+  background-color:	#000000;
+  color:		#00FF44;
+*/
+  background-color:     #E0E0E0;
+}
+
+input.no-writeable {
+  text-align:		center;
+  background-color:	#EEEEEE;
+  color:		#000000;
+}
+
+td.value input.rw-number {
+  text-align:		left;
+}
+
+td.rw-text, td.rw-number input {
+  border-width:		0px;
+  border:		none;
+}
+
+
+span.units {
+  font-size:		small;
+  font-weight:		normal;
+  color:		#555555;
+}
+
+span.tunits {
+  font-size:		smaller;
+  font-weight:		normal;
+  color:		#220088;
+}
+
+/* A table of values. */
+
+table.val {
+  background-color:	#a0a0a0;
+  font-size:		70%;
+  font-family:		Arial;
+}
+
+table.val select {
+  font-size:		100.01%;
+  font-family:		Arial;
+}
+
+table.val input {
+  font-size:		100.01%;
+  font-family:		Arial;
+}
+
+th.hdr {
+  padding:		0px;
+  padding-left:		8px;
+  padding-right:	8px;
+  background-color:	#c6c3e7;
+  border-color:		#ffffff;
+  border-width:		1px;
+  border-style:		groove inset ridge inset;
+  text-align:		center;
+}
+
+thead th.hdr {
+  padding-top:		2px;
+  padding-bottom:	2px;
+}
+
+td.rw-text, td.rw-number {
+  padding:		0px;
+  background-color:	#ffffff;
+  border-width:		0px;
+  border-style:		none;
+  text-align:		center;
+}
+
+td.ro-text, td.ro-number, td.loc, td.stat {
+  padding:		0px;
+  padding-left:		4px;
+  padding-right:	4px;
+  background-color:	#f0f0f0;
+  border-width:		0px;
+  border-style:		none;
+}   
+
+td.ro-text, td.loc {
+  text-align:		left;
+}
+
+td.ro-number {
+  text-align:		right;
+}
+
+a.loc {
+  font-family:		Arial;
+}
+
+span.alarm-clear {
+  color:		#00b000;
+  background-color:     #f0f0f0;
+  border-width:		0px;
+  border-style:		none;
+  text-align:		right;
+}
+
+span.alarm-warning {
+  color:		#8080ff;
+  background-color:     #f0f0f0;
+  border-width:		0px;
+  border-style:		none;
+  text-align:		right;
+}
+
+span.alarm-minor {
+  color:		#4040ff;
+  background-color:     #f0f0f0;
+  border-width:		0px;
+  border-style:		none;
+  text-align:		right;
+}
+
+span.alarm-major {
+  color:		#ff8000;
+  background-color:     #f0f0f0;
+  border-width:		0px;
+  border-style:		none;
+  text-align:		right;
+}
+
+span.alarm-critical {
+  color:		#ff0000;
+  background-color:     #f0f0f0;
+  border-width:		0px;
+  border-style:		none;
+  text-align:		right;
+}
+
+div.help {
+  font-family:		Arial;
+  font-size:		small;
+}
+
+#help {
+  font-family:		Arial;
+  font-size:		small;
+}
+
+#help h2 {
+  font-size:		small;
+}
+
+#help dt {
+  font-weight:		bolder;
+}
+
+#help dd {
+  color:		#007700;
+  padding:		6px;
+}
+
+#help span.help {
+  color:		#007700;
+}
+
+select {
+  font-size:16px;
+  font-family:Monaco, Courier;
+}
+
+select option {
+  font-size:16px;
+  font-family:Monaco, Courier;
+}
+

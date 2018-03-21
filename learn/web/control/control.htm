@@ -1,0 +1,31 @@
+<html>
+<head>
+<script type="text/javascript" src="/menu/mtmtrack.js"></script>
+<script type="text/javascript" src="/menu/mtmcode.js"></script>
+<script>
+bwid = getCookie("browserID");
+if(bwid == null)
+{
+	var d = new Date();
+	var t = d.getTime();
+	window.top.name = "BWID" + t;
+	//setCookie("browserID", window.top.name);
+}
+else
+	window.top.name = bwid;
+var windowname = window.top.name;
+curControlPage = getCookie(windowname);
+if(curControlPage == null) {
+	setCookie(windowname, "/control/systempage");
+	window.location = "/control/systempage"
+} else {
+	if(curControlPage.indexOf("control.htm")>=0) {
+		setCookie(windowname, "/control/systempage");
+		window.location = "/control/systempage";
+	}
+	else
+		window.location = curControlPage;
+}
+</script>
+</head>
+</html>

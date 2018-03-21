@@ -1,0 +1,181 @@
+.app_win {
+    position:absolute;
+    background-color:#f6f6f6;
+    border-radius:4px;
+}
+
+.app_win_hdr{
+    font-size:1em;
+    font-weight:700;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+    height:36px;
+    line-height:36px;
+    text-align:center;
+    background-color:#f0f0f0;
+    border-bottom:1px #e0e0e0 solid;
+}
+
+.app_win_btns{
+    float:right;
+    padding-right:10px;
+}
+
+.app_win_btns img{
+    height:16px;
+    vertical-align:middle;
+    cursor:pointer;
+    padding-left:5px;
+}
+
+.app_win_body{
+    font-size:0.9em;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.input_table {
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
+    border: 1px gray solid;
+    border-radius:5px; 
+}
+
+.input_table input[type="text"], .input_table input[type="password"] {
+    height:26px;
+    border: 1px #96c2e1 solid;
+    width:200px;
+}
+
+.input_th {
+    text-align:left;
+    padding-left:20px;
+    height:45px;
+    line-height:45px;
+    color:#555555;
+}
+
+.input_th2 {
+    text-align:left;
+    padding-left:5px;
+    height:45px;
+    line-height:45px;
+    color:#555555;
+}
+
+.input_select{
+    width:100px;
+    height:30px;
+    color:#5685d2;
+    border:1px #5685d2 solid;
+}
+
+.input_col {
+    color:#5685d2;
+}
+
+.input_button {
+    color:#6a9ec6;
+    border-radius:3px;
+    width:100px;
+    height:32px;
+    border:1px gray solid;
+    font-weight:700;
+    background-color:#eff6f5;
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ffffff',endColorStr='#e9f8f6',gradientType='0');
+    background: -moz-linear-gradient(top, #ffffff, #e9f8f6);
+    background: -o-linear-gradient(top,#ffffff, #e9f8f6);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#e9f8f6));
+    
+}
+
+.input_button:hover {
+    background-color:gray;
+    cursor:pointer;
+}
+
+.input_table_title{
+    color:#5685d2;
+    width:80px;
+    margin-left:40px;
+    margin-top:-10px;
+    position:absolute;
+    z-Index:10;
+    text-align:center;
+    background-color:white;
+}
+
+.data_tables th {
+   text-align:left;
+}
+
+.datepicker_div {
+    display:inline-block;
+    height:30px;
+    line-height:30px;
+    width:125px;
+    border:1px #a0a0a0 solid;
+}
+
+.datepicker_div input {
+    height:20px;
+    width:90px;
+    vertical-align:middle;
+    border:0px;
+}
+
+.datepicker_div img {
+    vertical-align:middle;
+    height:24px;
+    margin-top:-4px;
+}
+
+.dataTables_wrapper .dataTables_info{
+	float:right;
+	clear:none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button, 
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button:active,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active{
+	width:23px;
+	height:23px;
+	float:left; 
+	padding:0; 
+	overflow:hidden;
+	display:block;
+	background-repeat:no-repeat;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.first, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.first:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.first:active{
+	background-image: url("../images/PageFirst.png"); 
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous:active{
+	background-image: url("../images/PagePrevious.png"); 
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.next, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.next:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.next:active{
+	background-image: url("../images/PageNext.png"); 
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.last, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.last:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.last:active{
+	background-image: url("../images/PageLast.png"); 
+}
+.dataTables_wrapper .dataTables_info{
+	padding-top:0.3em;
+}
+
+.dataTables_wrapper .dataTables_filter {
+  float: left;
+}

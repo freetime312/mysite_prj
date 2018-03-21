@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系统设置 - 无线固定视频编解码设备管理系统</title>
+<link href="datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/desktop.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="test.js"></script>
+<style type="text/css">
+#record-table img{
+    height:16px;
+    padding-right:5px;
+    cursor:pointer;
+}
+.date_filter {
+   padding-top:5px;
+   padding-bottom:5px;
+   padding-left:8px;
+}
+
+.date_filter td {
+   height:40px;
+   line-height:40px;
+   text-align:left;
+}
+
+.date_filter div {
+    margin-top:5px;
+}
+#record-table_filter{
+   display:none;
+}
+</style>
+
+<script type="text/javascript">
+function showValue(obj){
+ alert("changed value is " + obj);
+ $('#record-table').dataTable().fnPageChange(4);
+}
+</script>
+
+</head>
+<body>
+<input type="hidden" id="sd_hd_device" value="0">
+<img class="bg" src="images/bg_1440_900.png"/>
+
+<div id='header'>
+</div>
+
+<div id='footer'>
+</div>
+
+<div id="diag_div" style='display:none;'>
+<span id='diag_content'></span>
+</div>
+
+<div id='setting_div' class='app_win'>
+    <div class='app_win_hdr'>
+        系统设置
+        <div class='app_win_btns'>
+             <img src='images/minimize.png' class='app_win_min'>
+             <img src='images/maximize.png' class='app_win_max'>
+             <img src='images/close.png' class='app_win_close'>
+        </div>
+    </div>
+    <div id='setting_tabs' class='app_win_body'>
+        <ul>
+            <li><a href="#tabs-record-setting">录像设置</a></li>
+        </ul>
+
+        <div id='tabs-record-setting'>
+            <br/>
+            <table id='record-table' cellpadding='0' cellspacing='0' width='100%' class="display data_tables" style='font-size:1em;font-family:arial;'>
+                <thead>
+                    <tr>
+                        <th><input type='checkbox' class='sel_all' name='record_sel' /></th>
+                        <th>序号</th>
+                        <th>文件名</th>
+                        <th>文件大小</th>
+                        <th>
+                            <img src='images/delete.png' onclick='delMultiRecord()'/>
+						</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th><input type='checkbox' class='sel_all' name='record_sel' /></th>
+                        <th>序号</th>
+                        <th>文件名</th>
+                        <th>文件大小</th>
+                        <th>
+                            <img src='images/delete.png' onclick='delMultiRecord()'/>
+						</th>
+                    </tr>
+                </tfoot>
+                <tbody id='record_tbody'> 
+                </tbody> 
+            </table>
+			<input type="text" id="testId" onPropertyChange="showValue(this.value)" />
+        </div>
+    </div>    
+</div>
+
+</body>
+</html>

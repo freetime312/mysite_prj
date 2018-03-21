@@ -1,0 +1,15 @@
+TABLE=users
+ROW=0
+name=Administrator
+password=
+group=customer
+prot=0
+disable=0
+TABLE=groups
+ROW=0
+name=customer
+priv=0
+method=0
+prot=0
+disable=0
+TABLE=access

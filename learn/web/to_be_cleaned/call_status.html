@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/desktop.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/call_status.js"></script>
+<style type="text/css">
+        .nonblank
+        {
+            float: left;
+            list-style: none;
+            border: 1px solid #999;
+            height: 31px;
+            line-height: 31px;
+            width: 110px;
+            text-align: center;
+            background-color: #112233;
+            font-size: 15px;
+            font-weight: 600;
+            cursor:pointer;
+        }
+.input_table{
+	table-layout: fixed;
+}
+</style>
+
+<script type="text/javascript">
+</script>
+
+</head>
+<body>
+<img class="bg" src="images/bg_1440_900.png"/>
+
+<div id='header'>
+</div>
+
+<div id='footer'>
+</div>
+
+<span id='diag_content'></span>
+</div>
+
+<div id='call_st_div' class='app_win'>
+    <div class='app_win_hdr'>
+        通话状态
+        <div class='app_win_btns'>
+             <img src='images/minimize.png' class='app_win_min'>
+             <img src='images/maximize.png' class='app_win_max'>
+             <img src='images/close.png' class='app_win_close'>
+        </div>
+    </div>
+    <div id='call_st_tabs' class='app_win_body'>
+        <ul>
+            <li><a href="#tabs-codex-status">通话状态</a></li>
+        </ul>
+		<div id='tabs-codex-status' >
+            <br/>
+            <div class='input_table_title'>音频编解码</div>
+            <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table'>
+				<colgroup span=2 width=33></colgroup>
+				<colgroup span=2 width=33></colgroup>
+				<colgroup span=2 width=34></colgroup>
+                <tr>
+					<td class='input_th2'>
+                         音频格式:
+                     </td>
+					<td class='input_col'>
+					     <span id="34_show"></span>
+                     </td>
+					<td class='input_th2'>
+                         输入接口:
+                     </td>
+					 <td class='input_col'>
+                         MIC
+                     </td>
+					<td class='input_th2'>
+                         输出接口:
+                     </td>
+					 <td class='input_col'>
+                         喇叭
+                     </td>
+                </tr>
+                <!--
+                <tr>
+                    <td class='input_th2'>
+                        编码码率:
+                    </td>
+                    <td class='input_col'>
+                       <span id='68_hidden' style='width:60px;'></span>kbps
+                    </td>
+                    <td class='input_th2'>
+                        解码码率:
+                    </td>
+                    <td class='input_col'>
+                        <span id='' style='width:60px;'>???</span>kbps
+                    </td>
+                </tr>
+                -->
+            </table>
+            <br/><br/><br/>
+            <div class='input_table_title'>视频编解码</div>
+            <table cellpadding='0' cellspacing='0' width='100%' height='100%'  class='input_table'>
+				<colgroup span=2 width=33></colgroup>
+				<colgroup span=2 width=33></colgroup>
+				<colgroup span=2 width=34></colgroup>
+                <tr>
+					<td class='input_th2'>
+                         输入接口:
+                     </td>
+					 <td class='input_col'>
+					     <span id="16_show" style='width:60px;'></span>
+                     </td>
+					<td class='input_th2'>
+                         输出接口:
+                     </td>
+					 <td class='input_col'>
+					     <span id="62_show" style='width:60px;'></span>
+                     </td>
+					<td class='input_th2'>
+                         丢包信息:
+                     </td>
+                     <td class='input_col'>
+                         <span id='36' style='width:60px;'>---</span>
+                     </td>
+				</tr>
+			    <tr>
+					<td class='input_th2'>
+                         编码码率:
+                     </td>
+                     <td class='input_col'>
+                         <span id='18_hidden' style='width:60px;'></span>kbps
+                         <input type='hidden' id='18_hidden'>
+                     </td>
+                     <td class='input_th2'>
+                         编码分辨率:
+                     </td>
+                     <td class='input_col'>
+                         <span id="27_show"></span>
+                     </td>
+                     <td class='input_th2'>
+                         编码帧率:
+                     </td>
+                     <td class='input_col'>
+                         <span id='20_hidden' style='width:60px;'/></span>fps
+                         <input type='hidden' id='20_hidden'>
+                     </td>
+                </tr>
+                <tr>
+                <!--
+                     <td class='input_th2'>
+                         解码码率:
+                     </td>
+                     <td class='input_col'>
+                         <span style='width:60px;'/>???
+                     </td>
+                -->
+                     <td class='input_th2'>
+                         解码分辨率:
+                     </td>
+                     <td class='input_col'>
+                         <span id="69_show"></span>
+                     </td>
+                </tr>
+            </table>            
+            <div style='text-align:center;padding-top:20px;'><input type='button' value='刷新' class='input_button' id='codex_status_refresh'></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

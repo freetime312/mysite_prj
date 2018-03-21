@@ -1,0 +1,7 @@
+dev_type=das
+dev_name=w
+dev_ip=192.168.0.246
+serial_name=ttyFT0
+power_ip=192.168.0.195
+power_port=1
+status=unlocked

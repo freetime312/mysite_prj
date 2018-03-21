@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/desktop.js"></script>
+</head>
+<body>
+<img class="bg" src="images/bg_1440_900.png" />
+
+<div id='header'>
+</div>
+
+<div id='footer'>
+</div>
+
+<div id='body_content'>
+        <div><a href="task.html"> 任务管理 </a> -> <a href="taskhistory.html">历史记录</a> -> <a href="taskshow.html">basic_test 117</a> </div>
+        <div style="background: blue;">
+        <div style="display: inline;">
+            <font color="white">basic_test 117</font>
+            <font color="white">（测试中 67%）</font>
+        </div>
+        <div style="display: inline;float: right;">
+            <a><font color="white">中断测试</font></a>
+            <a><font color="white">重新测试</font></a>
+            <a href="taskhistory.html"><font color="white">返回</font></a>
+        </div>
+    </div>
+    <table>
+        <tbody>
+            <tr>
+                <td style="border: solid;border-width: thin;vertical-align: top;">
+                  <ul style="width: 200px;background: bisque;padding: 0;">
+                    <li style="background: cadetblue;list-style:none;">测试配置</li> 
+                    <li style="list-style:none;">测试结果</li> 
+                    <li style="list-style:none;">测试日志</li> 
+                  </ul>
+                </td>
+                <td style="width: 100%;border-width: thin;vertical-align: top;">
+                    <div style="border: solid; border-width: thin;">
+                        <div>
+                            1、测试配置页显示构建测试页面内容
+                        </div>
+                        <div>
+                            2、测试结果、测试日志对应显示相应网页即可<br><br>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+ 
+<div id="diag_div" style='display:none;'>
+<span id='diag_content'></span>
+</div>
+
+</body>
+
+<script type="text/javascript">
+$(document).ready(function (){
+    setCurrentApp('task');
+    initDesktop();
+});
+</script>
+
+</html>

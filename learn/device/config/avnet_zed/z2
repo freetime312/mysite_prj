@@ -1,0 +1,7 @@
+dev_type=avnet_zed
+dev_name=z2
+dev_ip=192.168.0.19
+serial_name=ttyU1
+power_ip=192.168.0.14
+power_port=3
+status=unlocked

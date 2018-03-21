@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/desktop.js"></script>
+</head>
+<body>
+<img class="bg" src="images/bg_1440_900.png" />
+
+<div id='header'>
+</div>
+
+<div id='footer'>
+</div>
+
+<div id='body_content'>
+    <div><a href="task.html"> 任务管理 </a> -> <a href="taskhistory.html">历史记录</a> </div>
+<div style="background: blue;">
+        <div style="display: inline;">
+            <font color="white">测试历史记录</font>
+        </div>
+        <div style="display: inline;float: right;">
+            <a><font color="white">新建测试</font></a>
+        </div>
+    </div>
+    <div style="border: solid; border-width: thin;">
+        <div>
+            <table border="1" cellspacing="0">
+
+                <tr>
+                    <td width="100px">2017/11/3</td>
+                    <td width="100px">basic_test</td>
+                    <td width="100px">张三</td>
+                    <td width="100px">118</td>
+                    <td>
+                        <progress id="myProgress" value="0" max="100">
+                        </progress>
+                    </td>
+                    <td width="100px">1时10分</td>
+                    <td width="100px">排队中</td>
+                    <td width="100px">  </td>
+                    <td width="100px">查看</td>       
+                </tr>
+                <tr>
+                    <td width="100px">2017/11/2</td>
+                    <td width="100px">basic_test</td>
+                    <td width="100px">李四</td>
+                    <td width="100px">117</td>
+                    <td>
+                        <progress id="myProgress" value="67" max="100">
+                        </progress>
+                    </td>
+                    <td width="100px">35分</td>
+                    <td width="100px">测试中</td>
+                    <td width="100px">  </td>
+                    <td width="100px"><a href="taskshow.html">查看</a></td>   
+                </tr>
+                <tr>
+                    <td width="100px">2017/11/1</td>
+                    <td width="100px">basic_test</td>
+                    <td width="100px">王五</td>
+                    <td width="100px">116</td>
+                    <td>
+                        <progress id="myProgress" value="100" max="100">
+                        </progress>
+                    </td>
+                    <td width="100px">50分</td>
+                    <td width="100px">已完成</td>
+                    <td width="100px">通过 </td>
+                    <td width="100px">查看</td>   
+                </tr>
+                <tr>
+                    <td width="100px">2017/10/31</td>
+                    <td width="100px">basic_test</td>
+                    <td width="100px">赵六</td>
+                    <td width="100px">115</td>
+                    <td>
+                        <progress id="myProgress" value="100" max="100">
+                        </progress>
+                    </td>
+                    <td width="100px">35分</td>
+                    <td width="100px">已完成</td>
+                    <td width="100px">失败</td>
+                    <td width="100px">查看</td>   
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="diag_div" style='display:none;'>
+<span id='diag_content'></span>
+</div>
+
+</body>
+
+<script type="text/javascript">
+$(document).ready(function (){
+    setCurrentApp('task');
+    initDesktop();
+});
+</script>
+
+</html>

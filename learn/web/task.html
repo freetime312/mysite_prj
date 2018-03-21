@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/desktop.js"></script>
+<script>
+	$(document).ready(function(){
+  $("#basic").click(function(){
+    $("#basic_test").toggle();
+  });
+});
+</script>
+</head>
+<body>
+<img class="bg" src="images/bg_1440_900.png" />
+
+<div id='header'>
+</div>
+
+<div id='footer'>
+</div>
+
+<div id='body_content'>
+    <div style="background: blue;">
+        <div style="display: inline;">
+            <font color="white">basic_test</font>
+        </div>
+        <div style="display: inline;float: right;">
+            <a href="taskhistory.html"><font color="white">历史记录</font></a>
+            <a><font color="white">缺省配置</font></a>
+            <a href="javascript:newtest();"><font color="white">新建测试</font></a>
+            <a id="basic"><font color="white">展开</font></a>
+        </div>
+    </div>
+    <div id="basic_test" style="border: solid; border-width: thin; display:none;">
+    	<table border="1" cellspacing="0">
+    	<tr>
+    	<td colspan="1">方案概述</td>
+    	<td colspan="9">  </td>
+    	</tr>
+    	<tr>
+    	<td colspan="1">参数说明</td>
+    	<td colspan="9">1、测试分支：…… <br>
+    	    2、测试设备：……</td>
+    	</tr>
+    	<tr>
+			        <td colspan="1" width="100px">最近成功</td>
+			        <td colspan="1" width="100px">张三</td>
+			        <td colspan="1" width="100px">111</td>
+			        <td colspan="2" width="200px">2017/10/15  12:33:00</td>
+			        <td colspan="1" width="100px">最近失败</td>
+					<td colspan="1" width="100px">张三</td>
+					<td colspan="1" width="100px">111</td>
+					<td colspan="2" width="200px">2017/10/15  12:33:00  </td>	
+		</tr>
+    </table>
+    </div>
+    <div style="width: 100%;height: 10px;">
+    </div>
+    <div style="background: blue;">
+        <div style="display: inline;">
+            <font color="white">compile_test</font>
+        </div>
+        <div style="display: inline;float: right;">
+            <a href="taskhistory.html"><font color="white">历史记录</font></a>
+            <a><font color="white">缺省配置</font></a>
+            <a href="javascript:newtest();"><font color="white">新建测试</font></a>
+            <a href="javascript:compile();"><font color="white">展开</font></a>
+        </div>
+    </div>
+ <div id="compile_test" style="border: solid; border-width: thin; display:none;">
+    	<table border="1" cellspacing="0">
+    	<tr>
+    	<td colspan="1">方案概述</td>
+    	<td colspan="9">  </td>
+    	</tr>
+    	<tr>
+    	<td colspan="1">参数说明</td>
+    	<td colspan="9">1、测试分支：…… <br>
+    	    2、测试设备：……</td>
+    	</tr>
+    	<tr>
+			        <td colspan="1" width="100px">最近成功</td>
+			        <td colspan="1" width="100px">张三</td>
+			        <td colspan="1" width="100px">111</td>
+			        <td colspan="2" width="200px">2017/10/15  12:33:00</td>
+			        <td colspan="1" width="100px">最近失败</td>
+					<td colspan="1" width="100px">张三</td>
+					<td colspan="1" width="100px">111</td>
+					<td colspan="2" width="200px">2017/10/15  12:33:00  </td>	
+		</tr>
+    </table>
+    </div>
+    <div style="width: 100%;height: 10px;">
+    </div>
+    <div style="background: blue;">
+        <div style="display: inline;">
+            <font color="white">test_demo</font>
+        </div>
+        <div style="display: inline;float: right;">
+            <a href="taskhistory.html"><font color="white">历史记录</font></a>
+            <a><font color="white">缺省配置</font></a>
+            <a href="javascript:newtest();"><font color="white">新建测试</font></a>
+            <a href="javascript:demo();"><font color="white">展开</font></a>
+        </div>
+    </div>
+
+    <div id="test_demo" style="border: solid; border-width: thin; display:none;">
+    	<table border="1" cellspacing="0">
+    	<tr>
+    	<td colspan="1">方案概述</td>
+    	<td colspan="9">  </td>
+    	</tr>
+    	<tr>
+    	<td colspan="1">参数说明</td>
+    	<td colspan="9">1、测试分支：…… <br>
+    	    2、测试设备：……</td>
+    	</tr>
+    	<tr>
+			        <td colspan="1" width="100px">最近成功</td>
+			        <td colspan="1" width="100px">张三</td>
+			        <td colspan="1" width="100px">111</td>
+			        <td colspan="2" width="200px">2017/10/15  12:33:00</td>
+			        <td colspan="1" width="100px">最近失败</td>
+					<td colspan="1" width="100px">张三</td>
+					<td colspan="1" width="100px">111</td>
+					<td colspan="2" width="200px">2017/10/15  12:33:00  </td>	
+		</tr>
+    </table>
+    </div>
+</div>
+
+<div id="diag_div" style='display:none;'>
+<span id='diag_content'></span>
+</div>
+
+</body>
+
+<script type="text/javascript">
+$(document).ready(function (){
+    setCurrentApp('task');
+    initDesktop();
+});
+</script>
+
+</html>

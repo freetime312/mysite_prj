@@ -1,0 +1,7 @@
+dev_type=gw_ft1500a
+dev_name=FT0
+dev_ip=192.168.0.15
+serial_name=ttyFT0
+power_ip=192.168.0.14
+power_port=1
+status=unlocked
