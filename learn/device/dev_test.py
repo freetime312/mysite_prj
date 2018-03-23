@@ -79,7 +79,7 @@ def get_config_value(file_path, config_name):
 def dev_json(result, msg):
     jsondata = "{\"result\":\"" + result + "\","
     jsondata += "\"msg\":\"" + msg + "\","
-    jsondata += "\"data\":[{"
+    jsondata += "\"data\":["
 
     for sub_dir in os.listdir(FILE_PATH): 
         path = os.path.join(FILE_PATH, sub_dir)
@@ -87,7 +87,7 @@ def dev_json(result, msg):
         if not files:
             continue
         else:
-            jsondata += "\"dev_type\":\"" + sub_dir + "\","
+            jsondata += "{\"dev_type\":\"" + sub_dir + "\","
             jsondata += "\"devices\":["
             for cfg_file in files: 
                 path1 = os.path.join(path, cfg_file)
@@ -98,12 +98,13 @@ def dev_json(result, msg):
                 jsondata += "\"serial_name\":\"" + get_config_value(path1, "serial_name")+ "\","
                 jsondata += "\"power_ip\":\""    + get_config_value(path1, "power_ip")+ "\","
                 jsondata += "\"power_port\":\""  + get_config_value(path1, "power_port")+ "\","
-                jsondata += "\"status\":\""  + get_config_value(path1, "status")+ "\","
+                jsondata += "\"status\":\""  + get_config_value(path1, "status")+ "\""
                 jsondata += "}," 
-
-            jsondata += "]," 
-    jsondata += "}," 
-    jsondata += "]," 
+            jsondata = jsondata[0:len(jsondata)-1]
+            jsondata += "]}," 
+            
+    jsondata = jsondata[0:len(jsondata)-1]
+    jsondata += "]" 
     jsondata += "}" 
 
     return jsondata
